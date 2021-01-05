@@ -17,13 +17,16 @@ class HomeViewController: UIViewController {
     
     var greeting = ""
     
-    
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.addSubview(scrollView)
         
+        // Display Date and time
         showDate.text = Date().localizedDescription
+        
+        // Show greetings depending on time interval
         greetings()
     }
     
@@ -54,12 +57,16 @@ class HomeViewController: UIViewController {
     
     override func viewWillLayoutSubviews(){
     super.viewWillLayoutSubviews()
+        
+    // ScrollView  for buttons
     scrollView.contentSize = CGSize(width: 375, height: 800)
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    // greetings for time interval for greetings label
     
     func greetings() {
         let date = NSDate()
