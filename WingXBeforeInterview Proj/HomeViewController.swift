@@ -12,8 +12,8 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var signUpButton: WingXButton!
     @IBOutlet weak var showDate: UILabel!
-    @IBOutlet weak var greetingsLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var greetingsLabel: UILabel!
     
     var greeting = ""
     
@@ -85,6 +85,9 @@ class HomeViewController: UIViewController {
         }
         else if hourInt >= 20 && hourInt <= 24 {
             greeting = "GoodNight, "
+        }
+        else if hourInt >= 0 && hourInt <= 7 {
+            greeting = "Bed time"
         }
         greetingsLabel.text = greeting
     }
